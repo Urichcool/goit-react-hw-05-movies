@@ -2,8 +2,9 @@ import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 
 export const HeaderContainer = styled.header`
-    background-color: #afaff0;
-`
+  background-color: #afaff0;
+ border-bottom: 1px grey solid;
+`;
 
 export const HeaderNav = styled.nav`
   list-style: none;
@@ -30,10 +31,19 @@ font-size: 24px;
     color: red;
   }
 
-  &:hover,
-  &:focus{
-    color: red;
+  &:hover:not(.active),
+  &:focus-visible:not(.active){
+    color: orange;
   }
 `;
 
+export const TrendingSection = styled.section`
+  text-align: center;
+  padding-top: 30px;
+`
+
+
+export const TrendingTitle = styled.h1`
+  margin: 0;
+`
 
