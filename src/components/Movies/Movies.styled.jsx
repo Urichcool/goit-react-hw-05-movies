@@ -8,7 +8,7 @@ margin-top: 5px;
   padding-top: 30px;
   position: relative;
   border: 1px grey solid;
-  width: 1200px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 30px;
