@@ -12,7 +12,7 @@ export const HomeTrendyList = () => {
       firstUpdate.current = false;
     } else {
       fetch(
-        'https://api.themoviedb.org/3/trending/movie/week?api_key=2eb857a72ef08fb512c529b6c9a18227'
+        'https://api.themoviedb.org/3/trending/movie/week?api_key=411d08d89a4569fb1b50aec07ee6fb72'
       )
         .then(res => res.json())
         .then(films => {
