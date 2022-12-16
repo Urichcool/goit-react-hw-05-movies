@@ -1,15 +1,23 @@
 import styled from "@emotion/styled";
 
 export const MoviesSection = styled.section`
-display: flex;
-flex-direction: column;
-align-items: center;
-`
+margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  position: relative;
+  border: 1px grey solid;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+  text-align: center;
+`;
 
 export const SearchForm = styled.form`
     width: 400px;
     display: flex;
-    padding-top: 30px;
     height: 30px;
 `
 

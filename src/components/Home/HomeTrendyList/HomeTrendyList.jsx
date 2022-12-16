@@ -31,6 +31,7 @@ export const HomeTrendyList = () => {
     }
   }, []);
 
+
   return (
     <>
       <HomeTrendyTitle>Trending today</HomeTrendyTitle>
