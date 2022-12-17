@@ -10,10 +10,10 @@ const firstUpdate = useRef(true);
 
   useEffect(() => {
     if (firstUpdate.current) {
-      firstUpdate.current = false;
+      return
     } else {
       fetch(
-        `https://api.themoviedb.org/3/movie/${movieId}?api_key=b472d4f12973a327a2d70c5466857dcc`
+        `https://api.themoviedb.org/3/movie/${movieId}?api_key=2eb857a72ef08fb512c529b6c9a18227`
       )
         .then(res => res.json())
         .then(
