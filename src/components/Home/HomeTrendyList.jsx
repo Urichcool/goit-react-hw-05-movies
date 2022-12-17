@@ -12,9 +12,6 @@ export const HomeTrendyList = () => {
   const firstUpdate = useRef(true);
 
   useEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
-    } else {
       fetch(
         'https://api.themoviedb.org/3/trending/movie/week?api_key=b472d4f12973a327a2d70c5466857dcc'
       )
@@ -32,7 +29,6 @@ export const HomeTrendyList = () => {
             ]);
           });
         });
-    }
   }, []);
 
   return (
