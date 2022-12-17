@@ -8,9 +8,6 @@ import { HomeTrendyItem } from './HomeTrendyItem';
 
 export const HomeTrendyList = () => {
   const [trandingFilms, setTrandingFilms] = useState([]);
-
-  const firstUpdate = useRef(true);
-
   useEffect(() => {
       fetch(
         'https://api.themoviedb.org/3/trending/movie/week?api_key=b472d4f12973a327a2d70c5466857dcc'
