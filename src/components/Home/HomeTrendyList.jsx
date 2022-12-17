@@ -3,7 +3,7 @@ import {
   HomeTrendyTitle,
   HomeSection,
 } from './HomeTrendyList.styled';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { HomeTrendyItem } from './HomeTrendyItem';
 
 export const HomeTrendyList = () => {
