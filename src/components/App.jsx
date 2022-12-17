@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import { Movies } from './Movies/Movies';
-import { Layout } from './Layout';
 import { MovieId } from './Movies/MovieId/MovieId';
 import { HomeTrendyList } from './Home/HomeTrendyList';
 
