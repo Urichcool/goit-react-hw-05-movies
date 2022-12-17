@@ -3,17 +3,14 @@ import {
   HomeTrendyTitle,
   HomeSection,
 } from './HomeTrendyList.styled';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { HomeTrendyItem } from './HomeTrendyItem';
 
 export const HomeTrendyList = () => {
   const [trandingFilms, setTrandingFilms] = useState([]);
-
-  const firstUpdate = useRef(true);
-
   useEffect(() => {
     if (firstUpdate.current) {
-      return
+      firstUpdate.current = false;
     } else {
       fetch(
         'https://api.themoviedb.org/3/trending/movie/week?api_key=2eb857a72ef08fb512c529b6c9a18227'
@@ -32,7 +29,6 @@ export const HomeTrendyList = () => {
             ]);
           });
         });
-    }
   }, []);
 
   return (
