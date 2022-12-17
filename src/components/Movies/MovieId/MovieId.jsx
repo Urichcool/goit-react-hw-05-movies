@@ -13,7 +13,7 @@ const firstUpdate = useRef(true);
       firstUpdate.current = false;
     } else {
       fetch(
-        `https://api.themoviedb.org/3/movie/${movieId}?api_key=2eb857a72ef08fb512c529b6c9a18227`
+        `https://api.themoviedb.org/3/movie/${movieId}?api_key=b472d4f12973a327a2d70c5466857dcc`
       )
         .then(res => res.json())
         .then(
