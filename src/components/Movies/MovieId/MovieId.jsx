@@ -1,18 +1,14 @@
 import { MovieIdBackLink, MovieIdTitle, MovieIdImg, MovieIdText, MovieIdStrongText} from './MovieId.styled';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 export const MovieId = () => {
-const firstUpdate = useRef(true);
   const [filmData, setFilmData] = useState({});
   const { movieId } = useParams();
   
 
   useEffect(() => {
-    if (firstUpdate.current) {
-      return
-    } else {
-      fetch(
+    fetch(
         `https://api.themoviedb.org/3/movie/${movieId}?api_key=2eb857a72ef08fb512c529b6c9a18227`
       )
         .then(res => res.json())
@@ -38,7 +34,6 @@ const firstUpdate = useRef(true);
                 .join(' '),
             })
         );
-    }
   }, [movieId]);
     
 
