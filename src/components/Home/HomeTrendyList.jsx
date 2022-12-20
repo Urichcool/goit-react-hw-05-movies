@@ -35,7 +35,7 @@ export const HomeTrendyList = () => {
       <HomeTrendyStyledList>
         {trandingFilms.map(({ id, title }) => {
           return (
-            <HomeTrendyItem key={id} title={title} id={id}></HomeTrendyItem>
+            <HomeTrendyItem key={id} title={title} id={id}/>
           );
         })}
       </HomeTrendyStyledList>
