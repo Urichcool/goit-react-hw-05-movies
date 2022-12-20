@@ -99,3 +99,16 @@ export const MovieIdCastText = styled.p`
   margin: 0;
   font-size: 20px;
 `;
+
+
+export const MovieIdReviewsList = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+export const MovieIdReviewsItemStyled = styled.li`
+  margin-bottom: 15px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
