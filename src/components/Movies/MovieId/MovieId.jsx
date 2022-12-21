@@ -10,12 +10,14 @@ import {
 MovieIdAditionalContainer
 } from './MovieId.styled';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect, } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 
 export const MovieId = () => {
   const [filmData, setFilmData] = useState({});
   const { movieId } = useParams();
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/movies';
 
   useEffect(() => {
     fetch(
@@ -48,7 +50,9 @@ export const MovieId = () => {
 
   return (
     <>
-      <MovieIdBackLink to={'/'}>Go back</MovieIdBackLink>
+      <MovieIdBackLink to={backLinkHref}>
+        Go back
+      </MovieIdBackLink>
       <MovieIdImg src={filmData.img} alt={filmData.title} />
       <MovieIdTitle>{`${filmData.title} (${filmData.year})`}</MovieIdTitle>
       <MovieIdText>User Score: {filmData.userScore}</MovieIdText>

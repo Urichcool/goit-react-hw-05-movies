@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { NavLink } from 'react-router-dom';
 
 export const MoviesSection = styled.section`
 margin-top: 5px;
@@ -34,6 +35,32 @@ font-size: 20px;
   border-radius: 4px;
   &:hover,
   &:focus{
+    color: orange;
+  }
+`;
+
+
+export const SearchMovieListStyled = styled.ul`
+  padding: 0;
+  list-style: none;
+`
+
+export const SearchMovieItemStyled = styled.li`
+  margin-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+
+export const SearchMovieStyledLink = styled(NavLink)`
+  font-weight: 600;
+  font-size: 24px;
+  color: black;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
     color: orange;
   }
 `;
