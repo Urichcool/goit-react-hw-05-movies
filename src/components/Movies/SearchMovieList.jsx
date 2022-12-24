@@ -1,14 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from 'react';
 import { SearchMovieListStyled } from "./Movies.styled";
 import { SearchMovieItem } from "./SearchMovieItem";
 
+
 export const SearchMovieList = ({movieQuery}) => {
-    const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        if (!movieQuery) {
+      if (!movieQuery) {
+          setMovies([]);
             return
-        }
+      }
+      setMovies([]);
           fetch(
             `https://api.themoviedb.org/3/search/movie?api_key=2eb857a72ef08fb512c529b6c9a18227&query=${movieQuery}`
           )
@@ -30,7 +33,7 @@ export const SearchMovieList = ({movieQuery}) => {
           <SearchMovieListStyled>
             {movies.map(({ id, title }) => {
               return (
-                <SearchMovieItem key={id} title={title} id={id} />
+                <SearchMovieItem key={id} title={title} id={id} query={movieQuery} />
               );
             })}
           </SearchMovieListStyled>

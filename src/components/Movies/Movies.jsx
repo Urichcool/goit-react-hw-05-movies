@@ -2,15 +2,16 @@ import { MoviesSection } from './Movies.styled';
 import { SearchMovieForm } from './SearchMovieForm';
 import { Outlet } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
 import { SearchMovieList } from './SearchMovieList';
+import { useSearchParams } from 'react-router-dom';
 
 export const Movies = () => {
-  const [movieQuery, setMovieQuery] = useState('');
   const { movieId } = useParams();
+   const [searchParams, setSearchParams] = useSearchParams();
+   const query = searchParams.get('query');
 
   const movieQueryHandler = data => {
-    setMovieQuery(data);
+    setSearchParams({ query: data });
   };
 
   return (
@@ -18,7 +19,7 @@ export const Movies = () => {
       {!movieId && (
         <>
           <SearchMovieForm onSubmit={movieQueryHandler} />
-          <SearchMovieList movieQuery={movieQuery} />
+          <SearchMovieList movieQuery={query} />
         </>
       )}
       <Outlet />
