@@ -1,8 +1,8 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const MoviesSection = styled.section`
-margin-top: 5px;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,33 +17,32 @@ margin-top: 5px;
 `;
 
 export const SearchForm = styled.form`
-    width: 400px;
-    display: flex;
-    height: 30px;
-`
+  width: 400px;
+  display: flex;
+  height: 30px;
+`;
 
 export const SearchInput = styled.input`
-    width: 100%;
-    margin-right: 10px;
-`
+  width: 100%;
+  margin-right: 10px;
+`;
 
 export const SearchButton = styled.button`
-font-size: 20px;
+  font-size: 20px;
   cursor: pointer;
   border: none;
   background-color: #afaff0;
   border-radius: 4px;
   &:hover,
-  &:focus{
+  &:focus {
     color: orange;
   }
 `;
 
-
 export const SearchMovieListStyled = styled.ul`
   padding: 0;
   list-style: none;
-`
+`;
 
 export const SearchMovieItemStyled = styled.li`
   margin-bottom: 10px;
@@ -51,7 +50,6 @@ export const SearchMovieItemStyled = styled.li`
     margin-bottom: 0;
   }
 `;
-
 
 export const SearchMovieStyledLink = styled(NavLink)`
   font-weight: 600;

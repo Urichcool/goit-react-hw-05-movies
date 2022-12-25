@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { MovieIdReviewsList, MovieIdText } from './MovieId.styled';
 import { MovieIdReviewsItem } from './MovieIdReviewsItem';
 
-export const MovieIdReviews = () => {
+const MovieIdReviews = () => {
   const [reviews, setReviews] = useState([]);
   const { movieId } = useParams();
 
@@ -14,7 +14,7 @@ export const MovieIdReviews = () => {
       .then(res => res.json())
       .then(reviews => {
         reviews.results.map(({ author, content, id }) => {
-        return  setReviews(state => [
+          return setReviews(state => [
             ...state,
             ...[
               {
@@ -30,12 +30,17 @@ export const MovieIdReviews = () => {
 
   return (
     <MovieIdReviewsList>
-          {reviews.length !== 0
-              ? reviews.map(({ id, author, content }) => {
-                 return <MovieIdReviewsItem key={id} author={author} content={content} />
-            }) 
-            : <MovieIdText>We dont have any reviews for this movie</MovieIdText>
-            }
+      {reviews.length !== 0 ? (
+        reviews.map(({ id, author, content }) => {
+          return (
+            <MovieIdReviewsItem key={id} author={author} content={content} />
+          );
+        })
+      ) : (
+        <MovieIdText>We dont have any reviews for this movie</MovieIdText>
+      )}
     </MovieIdReviewsList>
   );
 };
+
+export default MovieIdReviews;

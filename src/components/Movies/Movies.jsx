@@ -5,10 +5,10 @@ import { useParams } from 'react-router-dom';
 import { SearchMovieList } from './SearchMovieList';
 import { useSearchParams } from 'react-router-dom';
 
-export const Movies = () => {
+const Movies = () => {
   const { movieId } = useParams();
-   const [searchParams, setSearchParams] = useSearchParams();
-   const query = searchParams.get('query');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get('query');
 
   const movieQueryHandler = data => {
     setSearchParams({ query: data });
@@ -26,3 +26,5 @@ export const Movies = () => {
     </MoviesSection>
   );
 };
+
+export default Movies;

@@ -7,13 +7,16 @@ import {
   MovieIdAditionalList,
   MovieIdAditionalItem,
   MovieIAditionalLink,
-MovieIdAditionalContainer
+  MovieIdAditionalContainer,
 } from './MovieId.styled';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { Loader } from 'components/Loader';
+import { Suspense } from 'react';
+import {BiArrowBack} from 'react-icons/bi'
 
-export const MovieId = () => {
+const MovieId = () => {
   const [filmData, setFilmData] = useState({});
   const { movieId } = useParams();
   const location = useLocation();
@@ -50,28 +53,38 @@ export const MovieId = () => {
 
   return (
     <>
-      <MovieIdBackLink to={backLinkHref}>
-        Go back
-      </MovieIdBackLink>
-      <MovieIdImg src={filmData.img} alt={filmData.title} />
-      <MovieIdTitle>{`${filmData.title} (${filmData.year})`}</MovieIdTitle>
-      <MovieIdText>User Score: {filmData.userScore}</MovieIdText>
-      <MovieIdStrongText>Overview</MovieIdStrongText>
-      <MovieIdText>{filmData.overview}</MovieIdText>
-      <MovieIdStrongText>Genres</MovieIdStrongText>
-      <MovieIdText>{filmData.genres}</MovieIdText>
-      <MovieIdAditionalContainer>
-        <MovieIdStrongText>Aditional information</MovieIdStrongText>
-        <MovieIdAditionalList>
-          <MovieIdAditionalItem>
-            <MovieIAditionalLink to={'cast'}>Cast</MovieIAditionalLink>
-          </MovieIdAditionalItem>
-          <MovieIdAditionalItem>
-            <MovieIAditionalLink to={'reviews'}>Reviews</MovieIAditionalLink>
-          </MovieIdAditionalItem>
-        </MovieIdAditionalList>
-      </MovieIdAditionalContainer>
-      <Outlet />
+      {Object.keys(filmData).length !== 0 ? (
+        <>
+          <MovieIdBackLink to={backLinkHref}> <BiArrowBack /><p style={{margin:0, marginLeft:10}}>Go back</p></MovieIdBackLink>
+          <MovieIdImg src={filmData.img} alt={filmData.title} />
+          <MovieIdTitle>{`${filmData.title} (${filmData.year})`}</MovieIdTitle>
+          <MovieIdText>User Score: {filmData.userScore}</MovieIdText>
+          <MovieIdStrongText>Overview</MovieIdStrongText>
+          <MovieIdText>{filmData.overview}</MovieIdText>
+          <MovieIdStrongText>Genres</MovieIdStrongText>
+          <MovieIdText>{filmData.genres}</MovieIdText>
+          <MovieIdAditionalContainer>
+            <MovieIdStrongText>Aditional information</MovieIdStrongText>
+            <MovieIdAditionalList>
+              <MovieIdAditionalItem>
+                <MovieIAditionalLink to={'cast'}>Cast</MovieIAditionalLink>
+              </MovieIdAditionalItem>
+              <MovieIdAditionalItem>
+                <MovieIAditionalLink to={'reviews'}>
+                  Reviews
+                </MovieIAditionalLink>
+              </MovieIdAditionalItem>
+            </MovieIdAditionalList>
+          </MovieIdAditionalContainer>
+          <Suspense fallback={<Loader />}>
+            <Outlet />
+          </Suspense>
+        </>
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };
+
+export default MovieId;

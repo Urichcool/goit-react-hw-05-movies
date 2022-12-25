@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const MovieIdBackLink = styled(NavLink)`
@@ -17,7 +17,7 @@ export const MovieIdBackLink = styled(NavLink)`
   justify-content: center;
   align-items: center;
   &:hover,
-  &:focus{
+  &:focus {
     color: orange;
   }
 `;
@@ -27,18 +27,18 @@ export const MovieIdImg = styled.img`
   height: 300px;
   display: block;
   margin-bottom: 20px;
-`
+`;
 
 export const MovieIdTitle = styled.h2`
   margin: 0;
-`
+`;
 
 export const MovieIdText = styled.p`
   margin: 0;
   font-size: 20px;
   margin-top: 15px;
   width: 600px;
-`
+`;
 
 export const MovieIdStrongText = styled.strong`
   margin: 0;
@@ -48,7 +48,7 @@ export const MovieIdStrongText = styled.strong`
 
 export const MovieIdAditionalContainer = styled.div`
   margin-top: 50px;
-`
+`;
 
 export const MovieIdAditionalList = styled.ul`
   list-style: none;
@@ -56,15 +56,15 @@ export const MovieIdAditionalList = styled.ul`
   display: flex;
   justify-content: center;
   align-items: center;
-padding: 30px;
-`
+  padding: 30px;
+`;
 
 export const MovieIdAditionalItem = styled.li`
   margin-right: 20px;
-  &:last-child{
+  &:last-child {
     margin-right: 0;
   }
-`
+`;
 
 export const MovieIAditionalLink = styled(NavLink)`
   text-decoration: none;
@@ -90,16 +90,15 @@ export const MovieIdCastList = styled.ul`
 
 export const MovieIdCastItemStyled = styled.li`
   margin-bottom: 15px;
-  &:last-child{
+  &:last-child {
     margin-bottom: 0;
   }
-`
+`;
 
 export const MovieIdCastText = styled.p`
   margin: 0;
   font-size: 20px;
 `;
-
 
 export const MovieIdReviewsList = styled.ul`
   list-style: none;

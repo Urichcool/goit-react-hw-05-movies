@@ -25,6 +25,9 @@ export const StyledLink = styled(NavLink)`
   font-size: 24px;
   color: black;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &.active {
     color: red;
