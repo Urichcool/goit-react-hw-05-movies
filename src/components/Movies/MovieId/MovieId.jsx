@@ -56,7 +56,6 @@ const MovieId = () => {
       {Object.keys(filmData).length !== 0 ? (
         <>
           <MovieIdBackLink to={backLinkHref}>
-            {' '}
             <BiArrowBack />
             <p style={{ margin: 0, marginLeft: 10 }}>Go back</p>
           </MovieIdBackLink>
