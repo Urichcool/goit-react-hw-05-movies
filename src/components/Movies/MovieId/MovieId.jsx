@@ -14,7 +14,7 @@ import { useState, useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Loader } from 'components/Loader';
 import { Suspense } from 'react';
-import {BiArrowBack} from 'react-icons/bi'
+import { BiArrowBack } from 'react-icons/bi';
 
 const MovieId = () => {
   const [filmData, setFilmData] = useState({});
@@ -55,7 +55,11 @@ const MovieId = () => {
     <>
       {Object.keys(filmData).length !== 0 ? (
         <>
-          <MovieIdBackLink to={backLinkHref}> <BiArrowBack /><p style={{margin:0, marginLeft:10}}>Go back</p></MovieIdBackLink>
+          <MovieIdBackLink to={backLinkHref}>
+            {' '}
+            <BiArrowBack />
+            <p style={{ margin: 0, marginLeft: 10 }}>Go back</p>
+          </MovieIdBackLink>
           <MovieIdImg src={filmData.img} alt={filmData.title} />
           <MovieIdTitle>{`${filmData.title} (${filmData.year})`}</MovieIdTitle>
           <MovieIdText>User Score: {filmData.userScore}</MovieIdText>
@@ -67,10 +71,15 @@ const MovieId = () => {
             <MovieIdStrongText>Aditional information</MovieIdStrongText>
             <MovieIdAditionalList>
               <MovieIdAditionalItem>
-                <MovieIAditionalLink to={'cast'}>Cast</MovieIAditionalLink>
+                <MovieIAditionalLink to={'cast'} state={{ from: backLinkHref }}>
+                  Cast
+                </MovieIAditionalLink>
               </MovieIdAditionalItem>
               <MovieIdAditionalItem>
-                <MovieIAditionalLink to={'reviews'}>
+                <MovieIAditionalLink
+                  to={'reviews'}
+                  state={{ from: backLinkHref }}
+                >
                   Reviews
                 </MovieIAditionalLink>
               </MovieIdAditionalItem>

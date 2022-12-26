@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const MoviesSection = styled.section`
   margin-top: 5px;
@@ -51,7 +51,7 @@ export const SearchMovieItemStyled = styled.li`
   }
 `;
 
-export const SearchMovieStyledLink = styled(NavLink)`
+export const SearchMovieStyledLink = styled(Link)`
   font-weight: 600;
   font-size: 24px;
   color: black;

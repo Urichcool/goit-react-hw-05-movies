@@ -29,17 +29,19 @@ const MovieIdReviews = () => {
   }, [movieId]);
 
   return (
-    <MovieIdReviewsList>
+    <>
       {reviews.length !== 0 ? (
         reviews.map(({ id, author, content }) => {
           return (
-            <MovieIdReviewsItem key={id} author={author} content={content} />
+            <MovieIdReviewsList>
+              <MovieIdReviewsItem key={id} author={author} content={content} />
+            </MovieIdReviewsList>
           );
         })
       ) : (
-        <MovieIdText>We dont have any reviews for this movie</MovieIdText>
+        <MovieIdText>We don't have any reviews for this movie</MovieIdText>
       )}
-    </MovieIdReviewsList>
+    </>
   );
 };
 

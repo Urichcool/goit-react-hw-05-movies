@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { MovieIdCastList } from './MovieId.styled';
+import { MovieIdCastList, MovieIdText } from './MovieId.styled';
 import { MovieIdCastItem } from './MovieIdCastItem';
 
 const MovieIdCast = () => {
@@ -28,11 +28,17 @@ const MovieIdCast = () => {
   }, [movieId]);
 
   return (
-    <MovieIdCastList>
-      {castData.map(({ id, name }) => {
-        return <MovieIdCastItem key={id} name={name} />;
-      })}
-    </MovieIdCastList>
+    <>
+      {castData.length !== 0 ? (
+        <MovieIdCastList>
+          {castData.map(({ id, name }) => {
+            return <MovieIdCastItem key={id} name={name} />;
+          })}
+        </MovieIdCastList>
+      ) : (
+        <MovieIdText>We don't have any information about cast</MovieIdText>
+      )}
+    </>
   );
 };
 

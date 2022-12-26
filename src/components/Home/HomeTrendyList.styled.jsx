@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const HomeSection = styled.section`
   padding-top: 30px;
@@ -32,7 +32,7 @@ export const HomeTrendyTitle = styled.h1`
   margin: 0;
 `;
 
-export const StyledLink = styled(NavLink)`
+export const StyledLink = styled(Link)`
   font-weight: 600;
   font-size: 24px;
   color: black;
